@@ -1,0 +1,150 @@
+@font-face {
+  font-family: spaceMono;
+  src: url("../fonts/Space_Mono/SpaceMono-Regular.ttf");
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: spaceMono;
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+body #container {
+  background-color: white;
+  width: 920px;
+  border-radius: 25px;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 43px;
+}
+body #container #calculator-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 40px;
+}
+body #container #calculator-container .calculatorSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+body #container #calculator-container .calculatorSection label {
+  color: hsl(186, 14%, 43%);
+  font-weight: bold;
+  font-weight: 16px;
+}
+body #container #calculator-container .calculatorSection img {
+  position: absolute;
+  top: 45px;
+  left: 20px;
+}
+body #container #calculator-container .calculatorSection input {
+  background-color: hsl(189, 41%, 97%);
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  text-align: right;
+  padding-right: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+body #container #calculator-container .calculatorSection input:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+body #container #calculator-container .calculatorSection #tipGrid {
+  width: 100%;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+body #container #calculator-container .calculatorSection #tipGrid div {
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 5px;
+  padding: 6px 13px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+body #container #calculator-container .calculatorSection #tipGrid .activeTip {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+body #container #calculator-container .calculatorSection #tipGrid #custom {
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(186, 14%, 43%);
+}
+body #container #calculator-container .calculatorSection #tipGrid input {
+  padding-right: 14px;
+}
+body #container #display-container {
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 15px;
+  padding: 40px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+body #container #display-container #displayTop {
+  width: 100%;
+}
+body #container #display-container #displayTop .item {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+body #container #display-container #displayTop .item .text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body #container #display-container #displayTop .item .text label {
+  color: white;
+  font-size: 16px;
+}
+body #container #display-container #displayTop .item .text .subLabel {
+  color: hsl(184, 14%, 56%);
+  font-size: 13px;
+}
+body #container #display-container #displayTop .item .price {
+  color: hsl(172, 67%, 45%);
+  font-size: 48px;
+  letter-spacing: -1px;
+}
+body #container #display-container #reset {
+  width: 100%;
+  height: 48px;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}/*# sourceMappingURL=styles.css.map */

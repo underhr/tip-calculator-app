@@ -1,0 +1,144 @@
+$strongCyan: hsl(172, 67%, 45%);
+$darkCyan: hsl(183, 100%, 15%);
+$darkGrayishCyan: hsl(186, 14%, 43%);
+$grayishCyan: hsl(184, 14%, 56%);
+$lightGreyishCyan: hsl(185, 41%, 84%);
+$veryLightGreyishCyan: hsl(189, 41%, 97%);
+
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@font-face {
+    font-family: spaceMono;
+    src: url('../fonts/Space_Mono/SpaceMono-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: spaceMono;
+}
+
+body {
+    background-color: $lightGreyishCyan;
+    height: 100vh;
+    @include flex(center, center, column);
+    gap: 60px;
+
+    #container {
+    background-color: white;
+    width: 920px;
+    border-radius: 25px;
+    padding: 32px;
+    @include flex(center, center, row);
+    gap: 43px;
+        #calculator-container {
+            width: 50%;
+            @include flex(center, flex-start, column);
+            gap: 40px;
+            .calculatorSection {
+                width: 100%;
+                @include flex(center, flex-start, column);
+                gap: 6px;
+                position: relative;
+                label {
+                    color: $darkGrayishCyan;
+                    font-weight: bold;
+                    font-weight: 16px;
+                }
+                img {
+                    position: absolute;
+                    top: 45px;
+                    left: 20px;
+                }
+                input {
+                    background-color: $veryLightGreyishCyan;
+                    width: 100%;
+                    height: 48px;
+                    border: none;
+                    border-radius: 5px;
+                    text-align: right;
+                    padding-right: 20px;
+                    font-weight: bold;
+                    font-size: 24px;
+                    color: $darkCyan;
+                    cursor: pointer;
+                    &:focus {
+                        outline: 2px solid $strongCyan;
+                    }
+                }
+                #tipGrid {
+                    width: 100%;
+                    display: grid;
+                    gap: 14px;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    div{
+                        background-color: $darkCyan;
+                        border-radius: 5px;
+                        padding: 6px 13px;
+                        text-align: center;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+                    .activeTip {
+                        background-color: $strongCyan;
+                        color: $darkCyan;
+                    }
+                    #custom {
+                        background-color: $veryLightGreyishCyan;
+                        color: $darkGrayishCyan;
+                    }
+                    input {
+                        padding-right: 14px;
+                    }
+                }
+            }
+        }
+        #display-container {
+            background-color: $darkCyan;
+            border-radius: 15px;
+            padding: 40px;
+            width: 50%;
+            height: 100%;
+            @include flex(space-between, center, column);
+            #displayTop {
+                width: 100%;
+                .item {
+                    font-weight: bold;
+                    @include flex(space-between, center, row);
+                    .text {
+                        @include flex(center, flex-start, column);
+                        label {
+                            color: white;
+                            font-size: 16px;
+                        }
+                        .subLabel {
+                            color: $grayishCyan;
+                            font-size: 13px;
+                        }
+                    }
+                    .price{
+                        color: $strongCyan;
+                        font-size: 48px;
+                        letter-spacing: -1px;
+                    }
+                }
+            }
+            #reset {
+                width: 100%;
+                height: 48px;
+                background-color: $strongCyan;
+                color: $darkCyan;
+                border: none;
+                font-size: 20px;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+        }
+    }
+}
