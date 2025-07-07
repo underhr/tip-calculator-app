@@ -44,7 +44,7 @@ function updateCalculation() {
 }
 
 /* Reset Function */
-reset.addEventListener('click', function () {
+    reset.addEventListener('click', function () {
     billInput.value = '';
     customTip.value = '';
     numberPeople.value = '';

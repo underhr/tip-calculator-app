@@ -104,6 +104,7 @@ body #container #display-container {
   padding: 40px;
   width: 50%;
   height: 100%;
+  gap: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -147,4 +148,39 @@ body #container #display-container #reset {
   font-size: 20px;
   font-weight: bold;
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 920px) {
+  body {
+    justify-content: flex-start;
+    gap: 0px;
+  }
+  body > img {
+    padding-top: 50px;
+    padding-bottom: 41px;
+  }
+  body #container {
+    height: 100%;
+    width: 100vw;
+    border-radius: 25px 25px 0px 0px;
+    flex-direction: column;
+  }
+  body #container #calculator-container {
+    width: 100%;
+  }
+  body #container #calculator-container .calculatorSection #tipGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  body #container #display-container {
+    width: 100%;
+  }
+  body #container #display-container #displayTop .item .price {
+    font-size: 32px;
+    letter-spacing: -0.67px;
+  }
+}
+@media only screen and (max-height: 800px) {
+  body #container {
+    height: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */
