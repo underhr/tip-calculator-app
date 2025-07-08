@@ -8,6 +8,7 @@ let reset = document.getElementById('reset');
 document.addEventListener('input', function calculate(event) {
     if (event.target.matches('#billInput, #customTip, #numberPeople')) {
         updateCalculation();
+        checkReset();
     }
 });
 
@@ -30,6 +31,7 @@ document.getElementById("customTip").addEventListener("input", function (event) 
     selectedTip = parseFloat(event.target.value) || 0;
     [...tipGrid.children].forEach(child => child.classList.remove('activeTip')); // Remove active tip highlight
     updateCalculation();
+    checkReset();
 });
 
 /* Calculation Function */
@@ -43,6 +45,23 @@ function updateCalculation() {
     total.innerHTML = '$' + totalPerPerson;
 }
 
+/* Reset Button Color */
+function checkReset() {
+    const billHasValue = billInput.value.trim().length > 0;
+    const peopleHasValue = numberPeople.value.trim().length > 0;
+
+    if (billHasValue || peopleHasValue) {
+      reset.classList.add('readyReset');
+    } else {
+      reset.classList.remove('readyReset');
+    }
+}
+
+  billInput.addEventListener('input', checkReset);
+  numberPeople.addEventListener('input', checkReset);
+
+  checkReset();
+
 /* Reset Function */
     reset.addEventListener('click', function () {
     billInput.value = '';
@@ -53,4 +72,6 @@ function updateCalculation() {
     total.innerHTML = '$0.00';
 
     [...tipGrid.children].forEach(child => child.classList.remove('activeTip')); // Clear tip selection
+
+    checkReset();
 });

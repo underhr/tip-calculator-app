@@ -4,6 +4,9 @@ $darkGrayishCyan: hsl(186, 14%, 43%);
 $grayishCyan: hsl(184, 14%, 56%);
 $lightGreyishCyan: hsl(185, 41%, 84%);
 $veryLightGreyishCyan: hsl(189, 41%, 97%);
+$resetDefault: #0D686D;
+$resetReady: #26C2AE;
+$resetHover: #9FE8DF;
 
 @mixin flex($justify, $align, $direction) {
     display: flex;
@@ -133,12 +136,19 @@ body {
             #reset {
                 width: 100%;
                 height: 48px;
-                background-color: $strongCyan;
+                background-color: $resetDefault;
                 color: $darkCyan;
                 border: none;
                 font-size: 20px;
                 font-weight: bold;
                 border-radius: 5px;
+                &.readyReset {
+                    background-color: #26C2AE;
+                
+                    &:hover {
+                      background-color: #9FE8DF;
+                    }
+                }
             }
         }
     }
